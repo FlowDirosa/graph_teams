@@ -51,10 +51,6 @@ export class AuthService {
       });
 
     if (result) {
-      // Temporary to display token in an error box
-      //this.alertsService.add('Token acquired', result.accessToken);
-      // Temporary to display token in an error box
-      this.alertsService.add('Token acquired', result);
       return result.accessToken;
     }
     return null;
