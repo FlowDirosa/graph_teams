@@ -10,6 +10,8 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HomeComponent } from './home/home.component';
 import { AlertsComponent } from './alerts/alerts.component';
+import { MsalModule } from '@azure/msal-angular';
+import { OAuthSettings } from '../oauth';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,12 @@ import { AlertsComponent } from './alerts/alerts.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    MsalModule.forRoot({
+      auth: {
+        clientId: OAuthSettings.appId
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
